@@ -1,0 +1,46 @@
+.sectionGeneral{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex: wrap;
+}
+
+.sectionForm{
+    border: 1px solid;
+    border-color: rgb(93, 93, 250);
+    width: 50%;
+    padding: 2rem;
+}
+
+h2{
+    padding-bottom: 2rem;
+}
+
+.sectionLabelInputButton{
+    padding: 0.5rem;
+}
+
+label{
+    width: 100%;
+}
+
+input{
+    width: 100%;
+}
+
+textarea{
+    height: 100px;
+    width: 100%;
+    resize: none;
+}
+
+.sectionButton{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex: wrap;
+}
+
+.btn{
+    width: 25%;
+}

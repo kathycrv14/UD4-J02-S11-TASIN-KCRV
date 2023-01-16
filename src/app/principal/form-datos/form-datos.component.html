@@ -1,0 +1,51 @@
+<section class="sectionGeneral">
+    <section class="sectionForm">
+        <h2>FORMULARIO DE CONTACTO</h2>
+        <form action="" [formGroup]="formularioContacto" (ngSubmit)="submit()">
+            <!--********** NOMBRE **********-->
+            <section class="sectionLabelInputButton row">
+                <section class="col-6">
+                    <label for="">Nombre:</label>
+                </section>
+                <section class="col-6">
+                    <input type="text" formControlName="nombre" required>
+                    <!--********** VALIDACIONES - NOMBRE **********-->
+                    <p *ngIf="this.formularioContacto.get('nombre')?.errors?.['required']">(El nombre no puede quedar vacio)</p>
+                    <p *ngIf="this.formularioContacto.get('nombre')?.errors?.['minlength']">(Debe tener como mínimo 10 caracteres)</p>
+                    <!--******************************-->    
+                </section>
+            </section>
+            <!--******************************-->
+            <!--********** EMAIL **********-->
+            <section class="sectionLabelInputButton row">
+                <section class="col-6">
+                    <label for="">Email:</label>                    
+                </section>
+                <section class="col-6">
+                    <input type="text" formControlName="mail" required>
+                    <!--********** VALIDACIONES - EMAIL **********-->
+                    <p *ngIf="this.formularioContacto.get('mail')?.errors?.['required']">(El mail no puede quedar vacío</p>
+                    <p *ngIf="this.formularioContacto.get('mail')?.errors?.['email']">(El mail no es válido)</p>
+                    <!--******************************-->
+                </section>
+            </section>
+            <!--******************************-->
+            <!--********** MENSAJE **********-->
+            <section class="sectionLabelInputButton">
+                <label for="">Mensaje:</label>
+                <textarea name="" id="" cols="30" rows="10" formControlName="mensaje"></textarea>
+                <!--********** VALIDACIONES - MENSAJE **********-->
+                <p *ngIf="this.formularioContacto.get('mensaje')?.errors?.['required']">(El mensaje no puede quedar vacío)
+                </p>
+                <p *ngIf="this.formularioContacto.get('mensaje')?.errors?.['maxlength']">(Debe tener como máximo 500 caracteres)
+                </p>
+                <!--******************************-->
+            </section>
+            <!--******************************-->
+            <section class="sectionButton row">
+                <input type="submit" value="Confirmar" class="btn btn-primary col-12">
+                <p class="col-12">{{ resultado }}</p>
+            </section>       
+        </form>
+    </section>
+</section>
